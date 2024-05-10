@@ -126,3 +126,4 @@ Important:
     - The testnet is considered fully completed if the file ref.txt (email:ref_code:number of visits) shows the number of visits >= 3
 
 
+"# DOP-testnet-farmer" 
