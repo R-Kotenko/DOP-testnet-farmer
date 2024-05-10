@@ -1,13 +1,7 @@
-#  Algonomics - Farmer DOP
+#  Farmer DOP
 
 
 ## 🔗 Links
-
-🔔 CHANNEL: [AlgonomicTech](https://t.me/AlgonomicsTech)
-
-💬 CHAT: [Join the Chat](https://t.me/+7zMjbT6mRBZlMGEy)
-
-📹 Video: [youtube](https://youtu.be/z0Att42Zcog)
 
 💰 DONATION EVM ADDRESS: 0x4A080654795e526801954493BD0D712609d0ccEF
 
@@ -44,7 +38,7 @@ pip install -r requirements.txt
 
 🟢 Если нет кошельков, гененирируем необходимое количество
 
-🟢 Заполняем вище указаные файлы
+🟢 Заполняем више указаные файлы
 
 🟢 Регистрируем аккаунты
 

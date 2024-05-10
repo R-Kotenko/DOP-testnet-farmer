@@ -19,7 +19,7 @@ from selenium.webdriver.common.keys import Keys
 
 # ref = 'FDtPJDz'
 
-log.add("logger.log", format="{time:YYYY-MM-DD | HH:mm:ss.SSS} | {level} \t| {line}:{function} | {message}")
+log.add("../logger.log", format="{time:YYYY-MM-DD | HH:mm:ss.SSS} | {level} \t| {line}:{function} | {message}")
 
 
 def choose_random(file_name):
@@ -32,7 +32,7 @@ def choose_random(file_name):
 
 
 def save_data_account(secret_key_dop, seed_prase_dop, password_dop, email_address, mnemonic_mm, password_mm, proxy):
-    file_path = 'data/success_reg_accounts.txt'
+    file_path = '../data/success_reg_accounts.txt'
     data_line = f"{secret_key_dop}:{seed_prase_dop}:{password_dop}:{email_address}:{mnemonic_mm}:{password_mm}:{proxy}:0\n"
 
     with open(file_path, 'a') as file:
@@ -41,7 +41,7 @@ def save_data_account(secret_key_dop, seed_prase_dop, password_dop, email_addres
 
 
 def save_data_ref_code(email, ref_code, count_referrals=0):
-    file_path = 'data/ref.txt'
+    file_path = '../data/ref.txt'
     data_line = f"{email}:{ref_code}:{count_referrals}\n"
 
     with open(file_path, 'a') as file:
@@ -50,7 +50,7 @@ def save_data_ref_code(email, ref_code, count_referrals=0):
 
 
 def is_account_registered_dop(email_address):
-    with open('data/success_reg_accounts.txt', 'r') as file:
+    with open('../data/success_reg_accounts.txt', 'r') as file:
         for line in file:
             if email_address in line.split(':')[3]:
                 return False
@@ -154,7 +154,7 @@ def auto_reg_and_step8(EMAIL, MNEMONIC, PROXY):
 
     time.sleep(time_break)
     proxy = PROXY.split("@")[1].split(":")[0]
-    ref =  select_referral_code('data/ref.txt')
+    ref =  select_referral_code('../data/ref.txt')
     driver.get(url_main_dop + ref)
 
     driver.implicitly_wait(10)

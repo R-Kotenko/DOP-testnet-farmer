@@ -1,10 +1,8 @@
-import time
 from logo import print_ALGONOMICS
 from os.path import exists
-from auto_reg import *
-from config import *
-from testnet import *
-from creator_wallets import create_wallet
+from core.auto_reg import *
+from core.testnet import *
+from core.creator_wallets import create_wallet
 from loguru import logger as log
 
 

@@ -39,8 +39,3 @@ connect_mm = '/html/body/div[3]/div/div/div/div[2]/button'
 confirm_in_mm = '//*[@id="app-content"]/div/div/div/div[3]/div[2]/footer/button[2]'
 connect_final = '//*[@id="app-content"]/div/div/div/div[3]/div[2]/footer/button[2]'
 switch_network_on_cepolia = '//*[@id="app-content"]/div/div/div/div[2]/div/button[2]'
-
-
-
-# testnet.py
-

@@ -14,7 +14,7 @@ import base64
 import json
 
 
-log.add("logger.log", format="{time:YYYY-MM-DD | HH:mm:ss.SSS} | {level} \t| {line}:{function} | {message}")
+log.add("../logger.log", format="{time:YYYY-MM-DD | HH:mm:ss.SSS} | {level} \t| {line}:{function} | {message}")
 
 
 def encrypto_cookies(cookies):
@@ -32,7 +32,7 @@ def choose_random(file_name):
 
 
 def is_account_registered_2(email_address):
-    with open('data/success_reg_accounts.txt', 'r') as file:
+    with open('../data/success_reg_accounts.txt', 'r') as file:
         for line in file:
             if email_address in line.split(':')[3]:
                 return True
@@ -40,7 +40,7 @@ def is_account_registered_2(email_address):
 
 
 def is_account_passed_testnet(email_address):
-    with open('data/passed_testnet.txt', 'r') as file:
+    with open('../data/passed_testnet.txt', 'r') as file:
         for line in file:
             if email_address in line.split(':')[0]:
                 return False
@@ -48,7 +48,7 @@ def is_account_passed_testnet(email_address):
 
 
 def twitter_not_use(lodin_twitter):
-    with open('data/passed_testnet.txt', 'r') as file:
+    with open('../data/passed_testnet.txt', 'r') as file:
         for line in file:
             if lodin_twitter in line.split(':')[-1]:
                 return False
@@ -70,7 +70,7 @@ def generate_password(length=8):
 
 
 def save_data_passed_testnet(email_address, seed_phrase_dop, mnemonic_mm, twitter_login):
-    file_path = 'data/passed_testnet.txt'
+    file_path = '../data/passed_testnet.txt'
     data_line = f"{email_address}:{seed_phrase_dop}:{mnemonic_mm}:{twitter_login}\n"
 
     with open(file_path, 'a') as file:
@@ -81,7 +81,7 @@ def save_data_passed_testnet(email_address, seed_phrase_dop, mnemonic_mm, twitte
 
 def save_data_ref_code(email, ref_code, count_referrals=0):
 
-    file_path = 'data/ref.txt'
+    file_path = '../data/ref.txt'
     data_line = f"{email}:{ref_code}:{count_referrals}\n"
 
     with open(file_path, 'a') as file:
@@ -93,7 +93,7 @@ def save_progress(email, number):
     updated_lines = []
     found = False
 
-    with open("data/success_reg_accounts.txt", 'r') as file:
+    with open("../data/success_reg_accounts.txt", 'r') as file:
         lines = file.readlines()
 
     for line in lines:
@@ -105,14 +105,14 @@ def save_progress(email, number):
         updated_lines.append(line)
 
     if found:
-        with open("data/success_reg_accounts.txt", 'w') as file:
+        with open("../data/success_reg_accounts.txt", 'w') as file:
             file.writelines(updated_lines)
         return True
     else:
         return False
 
 def update_step_progress(email):
-    with open("data/success_reg_accounts.txt", 'r') as file:
+    with open("../data/success_reg_accounts.txt", 'r') as file:
         lines = file.readlines()
 
     for line in lines:

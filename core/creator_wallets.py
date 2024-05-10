@@ -3,7 +3,7 @@ from mnemonic import Mnemonic
 from loguru import logger as log
 
 
-log.add("logger.log", format="{time:YYYY-MM-DD | HH:mm:ss.SSS} | {level} \t| {line}:{function} | {message}")
+log.add("../logger.log", format="{time:YYYY-MM-DD | HH:mm:ss.SSS} | {level} \t| {line}:{function} | {message}")
 
 
 def create_wallet():
@@ -14,10 +14,11 @@ def create_wallet():
     mnemo = Mnemonic("english")
     seed_phrase = mnemo.generate(strength=128)
 
-
-    with open('data/wallets.txt', 'a') as file:
-        file.write(f'{seed_phrase}:{private_key}:{address}\n')
+    with open('../data/wallets.txt', 'a') as file:
+        file.write(f'{address}:{private_key}:{seed_phrase}\n')
         log.success(f"{address} | created successfully")
+
+
 
 
 
